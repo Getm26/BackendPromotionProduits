@@ -3,8 +3,6 @@ package com.mercadona.BackendPromotionProduits.service;
 import com.mercadona.BackendPromotionProduits.model.Produit;
 import com.mercadona.BackendPromotionProduits.repository.ProduitRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
