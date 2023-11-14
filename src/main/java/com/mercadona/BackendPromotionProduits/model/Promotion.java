@@ -31,5 +31,5 @@ public class Promotion {
     @Column(name = "DATE_FIN")
     private  Date dateFin;
     @Column(name = "PRIX_REMISE")
-    private Integer prixRemise;
+    private float prixRemise;
 }
