@@ -20,4 +20,5 @@ public class Produit {
     private  String description;
     @Column(name = "PRIX_PRODUIT")
     private Integer prixProduit;
+
 }
