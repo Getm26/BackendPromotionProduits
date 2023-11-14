@@ -8,33 +8,33 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public abstract class PromotionServiceImpl implements PromotionService {
+public class PromotionServiceImpl implements PromotionService {
 
     private final PromotionRepository promotionRepository;
 
     @Override
-    public Promotion creer(Promotion promotion) {
+    public Promotion creerPromotion(Promotion promotion) {
         return promotionRepository.save(promotion);
     }
 
     @Override
-    public List<Promotion> lire() {
+    public List<Promotion> lirePromotion() {
         return promotionRepository.findAll();
     }
 
     @Override
-    public Promotion modifier(Long id, Promotion promotion) {
+    public Promotion modifierPromotion(Long id, Promotion promotion) {
         return promotionRepository.findById(id)
-                .map(p ->{
-                    p.setPrixRemise(promotion.getPrixRemise());
-                    p.setDateDebut(promotion.getDateDebut());
-                    p.setDateFin(promotion.getDateFin());
+                .map(pr ->{
+                    pr.setPrixRemise(promotion.getPrixRemise());
+                    pr.setDateDebut(promotion.getDateDebut());
+                    pr.setDateFin(promotion.getDateFin());
                     return promotionRepository.save(promotion);
                 }).orElseThrow();
 
     }
     @Override
-    public String supprimer(Long id) {
+    public String supprimerPromotion(Long id) {
         promotionRepository.deleteById(id);
         return "La Promotion est Supprimée";
     }

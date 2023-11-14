@@ -5,11 +5,11 @@ import com.mercadona.BackendPromotionProduits.model.Promotion;
 import java.util.List;
 
 public interface PromotionService {
-    Promotion creer(Promotion promotion);
+    Promotion creerPromotion(Promotion promotion);
 
-    List<Promotion> lire();
+    List<Promotion> lirePromotion();
 
-    Promotion modifier(Long id, Promotion promotion);
+    Promotion modifierPromotion(Long id, Promotion promotion);
 
-    String supprimer(Long id);
+    String supprimerPromotion(Long id);
 }
