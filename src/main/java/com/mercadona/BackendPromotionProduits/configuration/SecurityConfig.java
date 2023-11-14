@@ -16,9 +16,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain apiSecurity(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/produit").hasAnyRole("ADMIN","USER")
-                        .requestMatchers("/produit/create").hasAnyRole("ADMIN")
-                        .requestMatchers("/produit/read").permitAll()
+                        .requestMatchers("/mercadona/produits").hasAnyRole("ADMIN","USER")
+                        .requestMatchers("/mercadona/produits/add").hasAnyRole("ADMIN")
+                        .requestMatchers("/mercadona/produits/list").permitAll()
+                        .requestMatchers("/mercadona/promotions").hasAnyRole("ADMIN","USER")
+                        .requestMatchers("/mercadona/promotions/add").hasAnyRole("ADMIN")
+                        .requestMatchers("/mercadona/promotions/list").permitAll()
+                        .requestMatchers("/mercadona/categories").hasAnyRole("ADMIN","USER")
+                        .requestMatchers("/mercadona/categories/add").hasAnyRole("ADMIN")
+                        .requestMatchers("/mercadona/categories/list").permitAll()
                         .anyRequest()
                         .authenticated()
                 )
