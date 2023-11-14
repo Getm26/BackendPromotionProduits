@@ -15,22 +15,22 @@ public class ProduitController {
 
     private final ProduitService produitService;
 
-    @PostMapping("/create")
+    @PostMapping("/produits/add")
     public Produit create(@RequestBody Produit produit){
         return produitService.creer(produit);
     }
 
-    @GetMapping("/read")
+    @GetMapping("/produits/list")
     public List<Produit> read(){
         return produitService.lire();
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/produits/update/{id}")
     public Produit update(@PathVariable Long id, @RequestBody Produit produit){
         return produitService.modifier(id,produit);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("produits/delete")
     public  String delete(@PathVariable Long id){
         return produitService.supprimer(id);
 

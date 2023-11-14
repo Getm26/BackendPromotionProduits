@@ -1,9 +1,7 @@
 package com.mercadona.BackendPromotionProduits.controller;
 
-import com.mercadona.BackendPromotionProduits.model.Promotion;
-import com.mercadona.BackendPromotionProduits.repository.CategorieRepository;
-
-import com.mercadona.BackendPromotionProduits.repository.PromotionRepository;
+import com.mercadona.BackendPromotionProduits.model.Categorie;
+import com.mercadona.BackendPromotionProduits.service.CategorieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,16 +13,15 @@ import java.util.List;
 public class CategorieController {
 
     @Autowired
-    private CategorieRepository categorieRepository;
-    @Autowired
-    private PromotionRepository promotionRepository;
+    private CategorieService categorieService;
 
-    @GetMapping("/promotions")
-    public List<Promotion> getAllPromotions(){
-        return promotionRepository.findAll();
+
+    @GetMapping("/categories/list")
+    public List<Categorie> getAllCategorie(){
+        return categorieService.afficherCategorie();
     }
-    @PostMapping(value = "/promotions")
-    public Promotion createPromotion(@RequestBody Promotion promotion){
-        return promotionRepository.save(promotion);
+    @PostMapping(value = "/categories/new")
+    public Categorie createCategorie(@RequestBody Categorie categorie){
+        return categorieService.creerCategorie(categorie);
     }
 }
