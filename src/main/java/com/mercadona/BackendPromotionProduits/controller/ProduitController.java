@@ -5,7 +5,6 @@ import com.mercadona.BackendPromotionProduits.service.ProduitService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.List;
 
 @RestController
