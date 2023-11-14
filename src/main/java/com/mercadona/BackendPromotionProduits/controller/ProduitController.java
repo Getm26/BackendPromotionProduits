@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/produit")
+@CrossOrigin(origins = "http://localhost:8092")
+@RequestMapping("/mercadona")
 @AllArgsConstructor
 public class ProduitController {
 
